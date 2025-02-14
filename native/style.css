@@ -1,5 +1,6 @@
 :root {
     --main-blue: rgb(0, 84, 180);
+    --darked-main-blue: rgb(0, 60, 128);
   }
 
 body{
@@ -46,6 +47,10 @@ button{
     background-color: var(--main-blue);
     font-size: 20px;
     color:white;
+}
+
+button:hover{
+    background-color: var(--darked-main-blue);
 }
 
 .auth__container{
@@ -102,4 +107,8 @@ button{
     height: 40px;
     border-radius: 20px;
     box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.3);
+}
+
+.socials_icons:hover{
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
 }
