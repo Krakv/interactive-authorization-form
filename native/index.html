@@ -14,28 +14,33 @@
         <header style="grid-row: 1;">
             <img src="images/Krakv.jpg" style="border-radius: 40px; margin: 20px;" height="70px"/>
         </header>
-
-        <main class="v-main">
-            <div class="auth__container">
-                <form class="auth__form">
-                    <label class="login_label">Вход</label>
-                    <input class="login_input" type="email" placeholder="Введите электронную почту"/>
-                    <input class="login_input" type="password" placeholder="Введите пароль"/>
-                    <div style="display:grid; grid-template-rows: 50% 50%;">
-                        <button>Войти</button>
-                        <button>Зарегистрироваться</button>
-                    </div>
-                </form>
-            </div>
+        <main style="grid-row: 2;">
+            <article class="v-main">
+                <div class="auth__container">
+                    <form class="auth__form">
+                        <h1 style="display: flex; align-items: center; justify-content: center;">Вход</h1>
+                        <input class="login_input" type="email" placeholder="Введите электронную почту"/>
+                        <input class="login_input" type="password" placeholder="Введите пароль"/>
+                        <div style="display:grid; grid-template-rows: 50% 50%;">
+                            <button name="login">Войти</button>
+                            <label style="margin: 10px;">
+                                <input type="checkbox"/>
+                                Сохранить сессию
+                            </label>
+                        </div>
                         <div class="auth__socials">
                             <img class="socials_icons" id="google" src="images/google.ico"/>
                             <img class="socials_icons" id="yandex" src="images/yandex.ico"/>
                             <img class="socials_icons" id="vk" src="images/vk.ico"/>
                             <img class="socials_icons" id="tg" src="images/tg.ico"/>
                         </div>
+                    </form>
+                </div>
+            </article>
         </main>
 
-        <footer>
+
+        <footer style="grid-row: 3;">
             <a href="https://github.com/Krakv" style="font-weight: bold;">Автор</a>
         </footer>
     </body>
