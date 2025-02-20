@@ -143,8 +143,10 @@ button:user-invalid{
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
 }
 
-#google:hover {
-    border-radius: 20px;
+#message{
+    text-align: center;
+    color: red;
+    padding: 10px;
 }
 
 input[type="checkbox"]:checked{

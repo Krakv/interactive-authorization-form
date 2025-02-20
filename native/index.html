@@ -6,7 +6,6 @@
         <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/1085/1085685.png" />
         <title>Интерактивная форма авторизации</title>
         <link href="style.css" rel="stylesheet" type="text/css"/>
-
     
     </head>
     
@@ -19,12 +18,12 @@
                 <div class="auth__container">
                     <form class="auth__form">
                         <h1 style="display: flex; align-items: center; justify-content: center;">Вход</h1>
-                        <input class="login_input" type="email" placeholder="Введите электронную почту"/>
-                        <input class="login_input" type="password" placeholder="Введите пароль"/>
+                        <input class="login_input" id="email" type="email" placeholder="Введите электронную почту"/>
+                        <input class="login_input" id="password" type="password" placeholder="Введите пароль"/>
                         <div style="display:grid; grid-template-rows: 50% 50%;">
-                            <button name="login">Войти</button>
+                            <button id="submit">Войти</button>
                             <label style="margin: 10px;">
-                                <input type="checkbox"/>
+                                <input id="checkbox" type="checkbox"/>
                                 Сохранить сессию
                             </label>
                         </div>
@@ -33,6 +32,9 @@
                             <img class="socials_icons" id="yandex" src="images/yandex.ico"/>
                             <img class="socials_icons" id="vk" src="images/vk.ico"/>
                             <img class="socials_icons" id="tg" src="images/tg.ico"/>
+                        </div>
+                        <div id="message">
+                            
                         </div>
                     </form>
                 </div>
@@ -43,5 +45,8 @@
         <footer style="grid-row: 3;">
             <a href="https://github.com/Krakv" style="font-weight: bold;">Автор</a>
         </footer>
+        
+        
+        <script src="script.js"></script>
     </body>
 </html>
