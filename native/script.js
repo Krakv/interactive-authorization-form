@@ -34,9 +34,42 @@ const check = () => {
     }
 };
 
+const saveData = () => {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    localStorage.setItem('email', email);
+    localStorage.setItem('password', password);
+};
+
+const removeData = () => {
+    localStorage.setItem('email', "");
+    localStorage.setItem('password', "");
+};
+
+const loadData = () => {
+    document.getElementById('email').value = localStorage.getItem('email') || '';
+    document.getElementById('password').value = localStorage.getItem('password') || '';
+    document.getElementById('checkbox').checked = localStorage.getItem('checkbox') === 'true';
+};
+
+window.onload = () => {
+    loadData();
+};
+
+document.getElementById('checkbox').addEventListener('change', (event) => {
+    localStorage.setItem('checkbox', event.target.checked);
+    if (!event.target.checked)
+        removeData();
+});
+
 document.getElementById('submit').addEventListener('click', (event) => {
     event.preventDefault();
+    let isSessionSaved = document.getElementById('checkbox').checked;
     if (validateForm()){
         let isAccepted = check();
+
+        if (isAccepted && isSessionSaved){
+            saveData();
+        }
     }
 });
