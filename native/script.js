@@ -64,6 +64,7 @@ document.getElementById('checkbox').addEventListener('change', (event) => {
 
 document.getElementById('submit').addEventListener('click', (event) => {
     event.preventDefault();
+    const button = document.getElementById("submit");
     let isSessionSaved = document.getElementById('checkbox').checked;
     if (validateForm()){
         let isAccepted = check();
@@ -71,5 +72,9 @@ document.getElementById('submit').addEventListener('click', (event) => {
         if (isAccepted && isSessionSaved){
             saveData();
         }
+    }
+    else{
+        button.classList.add("shake");
+        setTimeout(() => button.classList.remove("shake"), 300);
     }
 });
