@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.flaticon.com/128/1085/1085685.png"
+    />
+    <title>Интерактивная форма авторизации</title>
+    <link rel="stylesheet" crossorigin href="/assets/index-wQZlLyFL.css" />
+  </head>
+
+  <body>
+    <header style="grid-row: 1">
+      <img
+        src="/assets/Krakv-DObhi94E.jpg"
+        style="border-radius: 40px; margin: 20px"
+        height="70px"
+      />
+    </header>
+    <main style="grid-row: 2">
+      <article class="v-main">
+        <div class="auth__container">
+          <form class="auth__form">
+            <h1
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              Вход
+            </h1>
+            <input
+              class="login_input"
+              id="email"
+              type="email"
+              placeholder="Введите электронную почту"
+            />
+            <input
+              class="login_input"
+              id="password"
+              type="password"
+              placeholder="Введите пароль"
+            />
+            <div style="display: grid; grid-template-rows: 50% 50%">
+              <button id="submit">Войти</button>
+              <label style="margin: 10px">
+                <input id="checkbox" type="checkbox" />
+                Сохранить сессию
+              </label>
+            </div>
+            <div class="auth__socials">
+              <img
+                class="socials_icons"
+                id="google"
+                src="/assets/google-WEn1Egm-.ico"
+              />
+              <img
+                class="socials_icons"
+                id="yandex"
+                src="/assets/yandex-qPMI-gnO.ico"
+              />
+              <img
+                class="socials_icons"
+                id="vk"
+                src="/assets/vk-BXdBOZ_6.ico"
+              />
+              <img
+                class="socials_icons"
+                id="tg"
+                src="/assets/tg-D_4DkKrC.ico"
+              />
+            </div>
+            <div id="message"></div>
+          </form>
+        </div>
+      </article>
+    </main>
+
+    <footer style="grid-row: 3">
+      <a href="https://github.com/Krakv" style="font-weight: bold">Автор</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
