@@ -164,9 +164,19 @@ button:user-invalid {
 
 #message {
   text-align: center;
-  color: red;
   padding: 10px;
+
 }
+
+.green {
+  color: green;
+  background-color: #d4edda;
+}
+.red {
+  color: red;
+  background-color: #f8d7da;
+}
+
 
 input[type='checkbox']:checked {
   animation: pulse 1s ease-in-out;

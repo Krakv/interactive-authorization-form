@@ -1,4 +1,4 @@
-import { validateForm } from './script';
+import { validateForm } from './module';
 
 document.body.innerHTML = `
   <input type="email" id="email" value="" />
@@ -14,7 +14,7 @@ describe('validateForm', () => {
     passwordInput.value = '123456';
     const messageElement = document.getElementById('message') as HTMLDivElement;
 
-    const result = validateForm();
+    const result = validateForm(emailInput, passwordInput, messageElement);
     expect(result).toBe(false);
     expect(messageElement.textContent).toBe('Некорректный email');
   });
@@ -26,7 +26,7 @@ describe('validateForm', () => {
     passwordInput.value = '123';
     const messageElement = document.getElementById('message') as HTMLDivElement;
 
-    const result = validateForm();
+    const result = validateForm(emailInput, passwordInput, messageElement);
     expect(result).toBe(false);
     expect(messageElement.textContent).toBe('Пароль должен быть не менее 6 символов');
   });
@@ -38,7 +38,7 @@ describe('validateForm', () => {
     passwordInput.value = '123456';
     const messageElement = document.getElementById('message') as HTMLDivElement;
 
-    const result = validateForm();
+    const result = validateForm(emailInput, passwordInput, messageElement);
     expect(result).toBe(true);
     expect(messageElement.textContent).toBe('');
   });

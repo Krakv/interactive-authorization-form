@@ -1,45 +1,4 @@
-export const validateForm = () => {
-  const emailInput = document.getElementById('email') as HTMLInputElement
-  const passwordElement = document.getElementById(
-    'password'
-  ) as HTMLInputElement
-  const password = passwordElement.value
-  const message = document.getElementById('message') as HTMLDivElement
-
-  const passwordMinLength = 6
-
-  if (!emailInput?.checkValidity() || emailInput.value === '') {
-    message.textContent = 'Некорректный email'
-    return false
-  }
-  if (password.length < passwordMinLength) {
-    message.textContent = 'Пароль должен быть не менее 6 символов'
-    return false
-  }
-  message.textContent = ''
-  return true
-}
-
-const check = () => {
-  const correctEmail = 'idtokmakov@edu.hse.ru'
-  const correctPassword = 'difficultpassword2025'
-
-  const emailElement = document.getElementById('email') as HTMLInputElement
-  const email = emailElement.value
-  const passwordElement = document.getElementById(
-    'password'
-  ) as HTMLInputElement
-  const password = passwordElement.value
-  const message = document.getElementById('message') as HTMLDivElement
-
-  if (email === correctEmail && password === correctPassword) {
-    if (message) message.textContent = 'Добро пожаловать!'
-    return true
-  } else {
-    if (message) message.textContent = 'Неверный логин или пароль'
-    return false
-  }
-}
+import { validateForm, check } from "./module"
 
 const saveData = () => {
   const emailElement = document.getElementById('email') as HTMLInputElement
@@ -86,8 +45,11 @@ document.getElementById('submit')?.addEventListener('click', (event) => {
   event.preventDefault()
   const checkbox = document.getElementById('checkbox') as HTMLInputElement
   const isSessionSaved = checkbox.checked
-  if (validateForm()) {
-    const isAccepted = check()
+  const emlElem = document.getElementById('email') as HTMLInputElement
+  const pwdElem = document.getElementById('password') as HTMLInputElement
+  const msgElem = document.getElementById('message') as HTMLDivElement
+  if (validateForm(emlElem, pwdElem, msgElem)) {
+    const isAccepted = check(emlElem, pwdElem, msgElem)
 
     if (isAccepted && isSessionSaved) {
       saveData()
