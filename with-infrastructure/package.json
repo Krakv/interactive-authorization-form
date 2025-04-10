@@ -5,7 +5,7 @@
   "scripts": {
     "test": "jest",
     "check-types": "tsc --noEmit",
-    "serve": "vite",
+    "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint .",

@@ -109,12 +109,13 @@ button:user-invalid {
 }
 
 .auth__container {
-  height: calc(100vh - 2px);
-  min-height: 550px;
+  height: calc(100vh - 202px);
+  min-height: 480px;
   max-height: 600px;
   background-color: rgb(238, 238, 238);
   border-radius: 10px;
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+  margin: 10px;
 }
 
 .v-main {
@@ -126,7 +127,7 @@ button:user-invalid {
 
 .auth__form {
   display: grid;
-  grid-template-rows: 250px 50px 50px 110px auto;
+  grid-template-rows: 40% 50px 50px 110px auto;
   height: 100%;
 }
 
