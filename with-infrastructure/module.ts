@@ -17,7 +17,7 @@ export function validateForm(emailInput : HTMLInputElement, passwordElement : HT
   }
 
 export function check(emailElement : HTMLInputElement, passwordElement : HTMLInputElement, message : HTMLDivElement) {
-    const correctEmail = 'idtokmakov@edu.hse.ru'
+    const correctEmail = 'test@test.ru'
     const correctPassword = 'difficultPassword2025'
 
     const email = emailElement.value
