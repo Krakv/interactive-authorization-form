@@ -1,2 +1,5 @@
 node_modules/
 /with-infrastructure/dist
+/with-infrastructure/.idea
+/framework/.idea
+.idea
