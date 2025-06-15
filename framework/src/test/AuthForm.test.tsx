@@ -5,13 +5,11 @@ import { useAuthStore } from '@/store/authStore'
 import { validateForm, checkCredentials } from '@/modules/module'
 import '@testing-library/jest-dom'
 
-// Мокаем модули
 jest.mock('@/store/authStore')
 jest.mock('@/modules/module')
 
-// Мокаем дочерние компоненты
 jest.mock('@/components/CheckBox', () => ({
-  Checkbox: ({ checked, onChange, label }: any) => (
+  Checkbox: ({ checked, onChange, label }: never) => (
     <label>
       <input
         type="checkbox"
@@ -29,7 +27,7 @@ jest.mock('@/components/SocialsAuth', () => ({
 }))
 
 jest.mock('@/components/Message', () => ({
-  Message: ({ text, type }: any) => (
+  Message: ({ text, type }: never) => (
     <div data-testid="message" data-type={type}>
       {text}
     </div>
@@ -46,7 +44,6 @@ describe('AuthForm', () => {
   const mockClearCredentials = jest.fn()
 
   beforeEach(() => {
-    // Настраиваем мок хранилища
     ;(useAuthStore as unknown as jest.Mock).mockImplementation(() => ({
       email: '',
       password: '',
@@ -62,7 +59,6 @@ describe('AuthForm', () => {
       clearCredentials: mockClearCredentials,
     }))
 
-    // Сбрасываем моки перед каждым тестом
     jest.clearAllMocks()
   })
 

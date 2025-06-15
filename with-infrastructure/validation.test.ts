@@ -7,7 +7,7 @@ document.body.innerHTML = `
 `;
 
 describe('validateForm', () => {
-  it('should return false and display error message for invalid email', () => {
+  it('должен возвращать false и выводить сообщение об ошибке для недопустимого email', () => {
     const emailInput = document.getElementById('email') as HTMLInputElement;
     emailInput.value = '';
     const passwordInput = document.getElementById('password') as HTMLInputElement;
@@ -19,7 +19,7 @@ describe('validateForm', () => {
     expect(messageElement.textContent).toBe('Некорректный email');
   });
 
-  it('should return false and display error message for password length less than 6', () => {
+  it('должен возвращать false и выводить сообщение об ошибке при длине пароля менее 6', () => {
     const emailInput = document.getElementById('email') as HTMLInputElement;
     emailInput.value = 'test@example.com';
     const passwordInput = document.getElementById('password') as HTMLInputElement;
@@ -31,7 +31,7 @@ describe('validateForm', () => {
     expect(messageElement.textContent).toBe('Пароль должен быть не менее 6 символов');
   });
 
-  it('should return true and clear message for valid form', () => {
+  it('должен возвращать true и сообщение для валидной формы', () => {
     const emailInput = document.getElementById('email') as HTMLInputElement;
     emailInput.value = 'test@example.com';
     const passwordInput = document.getElementById('password') as HTMLInputElement;

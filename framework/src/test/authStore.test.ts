@@ -29,7 +29,7 @@ describe('authStore', () => {
     useAuthStore.setState(useAuthStore.getInitialState())
   })
 
-  it('should save credentials when rememberMe is true', () => {
+  it('должен сохранять учетные данные, когда значение rememberMe равно true', () => {
     act(() => {
       useAuthStore.getState().setEmail('test@example.com')
       useAuthStore.getState().setPassword('password123')

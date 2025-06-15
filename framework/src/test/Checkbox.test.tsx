@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event'
 import { Checkbox } from '@/components/CheckBox'
 import '@testing-library/jest-dom'
 
-describe('Checkbox component', () => {
+describe('Checkbox компонент', () => {
   it('renders correctly with label', () => {
     render(
       <Checkbox
@@ -18,7 +18,7 @@ describe('Checkbox component', () => {
     expect(screen.getByLabelText('Test checkbox')).toBeInTheDocument()
   })
 
-  it('calls onChange when clicked', async () => {
+  it('вызывает onChange при нажатии', async () => {
     const handleChange = jest.fn()
     const user = userEvent.setup()
 

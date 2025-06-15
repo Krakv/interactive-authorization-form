@@ -1,35 +1,35 @@
 import { validateForm, checkCredentials } from '@/modules/module'
 
-describe('validateForm function', () => {
-  it('should return isValid true for valid email and password', () => {
+describe('Функция validateForm', () => {
+  it('должна возвращать isValid=true для валидных email и пароля', () => {
     const result = validateForm('test@test.com', 'password123')
     expect(result.isValid).toBe(true)
     expect(result.message).toBe('')
     expect(result.type).toBe('success')
   })
 
-  it('should return error for empty email', () => {
+  it('должна возвращать ошибку при пустом email', () => {
     const result = validateForm('', 'password123')
     expect(result.isValid).toBe(false)
     expect(result.message).toBe('Некорректный email')
     expect(result.type).toBe('error')
   })
 
-  it('should return error for invalid email format', () => {
-    const result = validateForm('not-an-email', 'password123')
+  it('должна возвращать ошибку при неверном формате email', () => {
+    const result = validateForm('не-email', 'password123')
     expect(result.isValid).toBe(false)
     expect(result.message).toBe('Некорректный email')
     expect(result.type).toBe('error')
   })
 
-  it('should return error for short password', () => {
-    const result = validateForm('test@test.com', 'short')
+  it('должна возвращать ошибку при коротком пароле', () => {
+    const result = validateForm('test@test.com', 'корот')
     expect(result.isValid).toBe(false)
     expect(result.message).toBe('Пароль должен быть не менее 6 символов')
     expect(result.type).toBe('error')
   })
 
-  it('should return error for empty password', () => {
+  it('должна возвращать ошибку при пустом пароле', () => {
     const result = validateForm('test@test.com', '')
     expect(result.isValid).toBe(false)
     expect(result.message).toBe('Пароль должен быть не менее 6 символов')
@@ -37,41 +37,41 @@ describe('validateForm function', () => {
   })
 })
 
-describe('checkCredentials function', () => {
-  it('should return success for correct credentials', () => {
+describe('Функция checkCredentials', () => {
+  it('должна возвращать успех при верных учетных данных', () => {
     const result = checkCredentials('test@test.ru', 'easyPassword1234567890')
     expect(result.isValid).toBe(true)
     expect(result.message).toBe('Добро пожаловать!')
     expect(result.type).toBe('success')
   })
 
-  it('should return error for incorrect email', () => {
-    const result = checkCredentials('wrong@email.com', 'easyPassword1234567890')
+  it('должна возвращать ошибку при неверном email', () => {
+    const result = checkCredentials('неверный@email.com', 'easyPassword1234567890')
     expect(result.isValid).toBe(false)
     expect(result.message).toBe('Неверный логин или пароль')
     expect(result.type).toBe('error')
   })
 
-  it('should return error for incorrect password', () => {
-    const result = checkCredentials('test@test.ru', 'wrongPassword')
+  it('должна возвращать ошибку при неверном пароле', () => {
+    const result = checkCredentials('test@test.ru', 'неверныйПароль')
     expect(result.isValid).toBe(false)
     expect(result.message).toBe('Неверный логин или пароль')
     expect(result.type).toBe('error')
   })
 
-  it('should return error for incorrect email and password', () => {
-    const result = checkCredentials('wrong@email.com', 'wrongPassword')
+  it('должна возвращать ошибку при неверном email и пароле', () => {
+    const result = checkCredentials('неверный@email.com', 'неверныйПароль')
     expect(result.isValid).toBe(false)
     expect(result.message).toBe('Неверный логин или пароль')
     expect(result.type).toBe('error')
   })
 
-  it('should be case sensitive for email', () => {
+  it('должна учитывать регистр в email', () => {
     const result = checkCredentials('Test@test.ru', 'easyPassword1234567890')
     expect(result.isValid).toBe(false)
   })
 
-  it('should be case sensitive for password', () => {
+  it('должна учитывать регистр в пароле', () => {
     const result = checkCredentials('test@test.ru', 'EasyPassword1234567890')
     expect(result.isValid).toBe(false)
   })
