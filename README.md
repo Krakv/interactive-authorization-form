@@ -36,7 +36,11 @@ Interactive authorization form
 
 ? - Prettier популярный, можно интегрировать с Eslint
 
-? - Jest для тестирования - популярный, поддерживает ts
+? - Jest для тестирования - популярный, поддерживает ts. 
+Конфигурация:
+1. "preset": "ts-jest" - Позволяет Jest работать с TypeScript
+2. "testEnvironment": "jsdom" - Позволяет тестировать код, который использует DOM API
+3. "testMatch": ["**/*.test.ts"] - Указывает Jest искать тестовые файлы с расширением .test.ts
 
 ## framework
 Инструкция по запуску:
