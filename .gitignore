@@ -3,3 +3,4 @@ node_modules/
 /with-infrastructure/.idea
 /framework/.idea
 .idea
+/framework/coverage

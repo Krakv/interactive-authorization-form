@@ -26,11 +26,11 @@
   }
 }
 
-body{
+body {
   margin: unset;
 }
 
-main{
+main {
   display: flex;
   flex-direction: column;
   align-items: center;

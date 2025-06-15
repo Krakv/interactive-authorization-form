@@ -1,39 +1,56 @@
-export function validateForm(emailInput: HTMLInputElement, passwordElement: HTMLInputElement, message: HTMLDivElement) {
-  const password = passwordElement.value;
-  const passwordMinLength = 6;
-
-  if (!emailInput?.checkValidity() || emailInput.value === '') {
-    message.textContent = 'Некорректный email';
-    changeMessageColor("red", message);
-    return false;
-  }
-  if (password.length < passwordMinLength) {
-    message.textContent = 'Пароль должен быть не менее 6 символов';
-    changeMessageColor("red", message);
-    return false;
-  }
-  message.textContent = '';
-  return true;
+type ValidationResult = {
+  isValid: boolean
+  message: string
+  type?: 'error' | 'success'
 }
 
-export function check(emailElement: HTMLInputElement, passwordElement: HTMLInputElement, message: HTMLDivElement) {
-  const correctEmail = 'test@test.ru';
-  const correctPassword = 'easyPassword1234567890';
+export const validateForm = (
+  email: string,
+  password: string
+): ValidationResult => {
+  const passwordMinLength = 6
 
-  const email = emailElement.value;
-  const password = passwordElement.value;
+  if (!email || !email.includes('@')) {
+    return {
+      isValid: false,
+      message: 'Некорректный email',
+      type: 'error',
+    }
+  }
+
+  if (password.length < passwordMinLength) {
+    return {
+      isValid: false,
+      message: 'Пароль должен быть не менее 6 символов',
+      type: 'error',
+    }
+  }
+
+  return {
+    isValid: true,
+    message: '',
+    type: 'success',
+  }
+}
+
+export const checkCredentials = (
+  email: string,
+  password: string
+): ValidationResult => {
+  const correctEmail = 'test@test.ru'
+  const correctPassword = 'easyPassword1234567890'
 
   if (email === correctEmail && password === correctPassword) {
-    if (message) message.textContent = 'Добро пожаловать!';
-    changeMessageColor("green", message);
-    return true;
-  } else {
-    if (message) message.textContent = 'Неверный логин или пароль';
-    changeMessageColor("red", message);
-    return false;
+    return {
+      isValid: true,
+      message: 'Добро пожаловать!',
+      type: 'success',
+    }
   }
-}
 
-export function changeMessageColor(color: string, messageDiv: HTMLDivElement) {
-  messageDiv.className = color;
+  return {
+    isValid: false,
+    message: 'Неверный логин или пароль',
+    type: 'error',
+  }
 }
