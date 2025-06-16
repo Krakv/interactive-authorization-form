@@ -1,6 +1,10 @@
 # interactive-authorization-form
 Interactive authorization form
 
+## Корректные имя пользователя и пароль
+test@test.ru
+easyPassword1234567890
+
 ## Native
 Инструкция по запуску:
 1. Открыть файл native\index.html.
