@@ -18,8 +18,8 @@ const validateForm = () => {
 };
 
 const check = () => {
-    const correctEmail = 'idtokmakov@edu.hse.ru';
-    const correctPassword = 'difficultpassword2025';
+    const correctEmail = 'test@test.ru';
+    const correctPassword = 'easyPassword1234567890';
     
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
